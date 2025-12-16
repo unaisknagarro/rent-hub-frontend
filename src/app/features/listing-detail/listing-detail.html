@@ -1,0 +1,16 @@
+<h2>{{apartment?.title}}</h2>
+<p>{{apartment?.description}}</p>
+
+
+<h3>Comments</h3>
+@for(c of apartment?.comments; track c._id)
+{
+<div>
+    <p>{{c.text}}</p>
+</div>
+}
+
+
+
+<textarea [(ngModel)]="commentText"></textarea>
+<button (click)="addComment()">Comment</button>

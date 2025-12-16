@@ -1,0 +1,22 @@
+<!-- <form [formGroup]="postForm" (ngSubmit)="submit()"></form> -->
+<form (ngSubmit)="submit()">
+    <input formControlName="title" placeholder="Title" />
+    <textarea formControlName="description"></textarea>
+    <input formControlName="location" placeholder="Location" />
+    <input type="number" formControlName="price" />
+
+
+    <label>Furnished:</label>
+    <input type="radio" value="yes" formControlName="furnished" /> Yes
+    <input type="radio" value="no" formControlName="furnished" /> No
+
+
+    <div formGroupName="amenities">
+        <label><input type="checkbox" formControlName="wifi" /> WiFi</label>
+        <label><input type="checkbox" formControlName="parking" /> Parking</label>
+        <label><input type="checkbox" formControlName="ac" /> AC</label>
+    </div>
+
+
+    <button type="submit">Create Post</button>
+</form>

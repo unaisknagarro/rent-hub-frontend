@@ -1,0 +1,19 @@
+<div class="carousel">Featured Apartments</div>
+
+
+<div class="filters">
+    <input placeholder="Search location" />
+</div>
+
+
+<div class="listing">
+    @for(apt of apartments; track apt.title){
+        <div class="card" >
+        <img [src]="apt.photos[0]" width="200" />
+        <h3>{{apt.title}}</h3>
+        <p>{{apt.location}} - ₹{{apt.price}}</p>
+        <button [routerLink]="['/post', apt._id]">View</button>
+        <button (click)="favourite(apt._id)">❤ Favourite</button>
+    </div>
+    }
+</div>
