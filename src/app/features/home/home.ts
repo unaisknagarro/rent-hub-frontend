@@ -1,33 +1,74 @@
 import { Component, OnInit } from '@angular/core';
-import { ApartmentService } from '../../core/services/apartment';
+import { ListingService } from '../../core/services/listing';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+
+import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrls: ['./home.scss'],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule
+  ]
 })
-
 export class Home implements OnInit {
-  apartments: any[] = [];
 
-  constructor(private apartmentService: ApartmentService) { }
+  listings: any[] = [];
+  filtered: any[] = [];
+  favourites: any[] = [];
+  search = '';
 
+  @ViewChild('carousel') carousel!: ElementRef<HTMLDivElement>;
+  @ViewChild('favCarousel') favCarousel!: ElementRef<HTMLDivElement>;
+
+  constructor(private listingService: ListingService) { }
 
   ngOnInit() {
-    this.loadApartments();
+    this.load();
   }
 
-
-  loadApartments() {
-    this.apartmentService.getApartments().subscribe(res => {
-      this.apartments = res as any[];
-    });
+  load() {
+    this.listings = this.listingService.getAll();
+    this.filtered = [...this.listings];
+    this.favourites = this.listingService.getFavourites();
   }
 
+  scroll(dir: 'left' | 'right') {
+    const amount = 300;
+    this.carousel.nativeElement.scrollLeft +=
+      dir === 'left' ? -amount : amount;
+  }
 
-  favourite(id: string) {
-    this.apartmentService.addToFavourite(id).subscribe();
+  scrollFav(dir: 'left' | 'right') {
+    const amount = 300;
+    this.favCarousel.nativeElement.scrollLeft +=
+      dir === 'left' ? -amount : amount;
+  }
+
+  toggleFavourite(id: string) {
+    this.listingService.toggleFavourite(id);
+    this.load();
+  }
+
+  filter() {
+    this.filtered = this.listings.filter(x =>
+      x.location.toLowerCase().includes(this.search.toLowerCase())
+    );
   }
 }

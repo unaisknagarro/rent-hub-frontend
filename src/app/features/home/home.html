@@ -1,19 +1,56 @@
-<div class="carousel">Featured Apartments</div>
+<h2 *ngIf="favourites.length">Your Favourites</h2>
 
+<div class="carousel-wrapper">
 
-<div class="filters">
-    <input placeholder="Search location" />
+    <button class="nav-btn left" (click)="scroll('left')">‹</button>
+
+    <div class="carousel" #carousel>
+        <div class="card" *ngFor="let item of listings">
+            <img [src]="item.image">
+
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+
+            <div class="actions">
+                <button [routerLink]="['/preview', item.id]">View</button>
+                <button (click)="toggleFavourite(item.id)">❤️</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="nav-btn right" (click)="scroll('right')">›</button>
+
 </div>
 
+<hr>
 
-<div class="listing">
-    @for(apt of apartments; track apt.title){
-        <div class="card" >
-        <img [src]="apt.photos[0]" width="200" />
-        <h3>{{apt.title}}</h3>
-        <p>{{apt.location}} - ₹{{apt.price}}</p>
-        <button [routerLink]="['/post', apt._id]">View</button>
-        <button (click)="favourite(apt._id)">❤ Favourite</button>
-    </div>
-    }
+<div class="hero">
+    <h1>Find Your Perfect Home</h1>
+    <p>Search from hundreds of verified listings</p>
+</div>
+
+<div class="filter">
+    <mat-form-field appearance="outline">
+        <mat-label>Search location</mat-label>
+        <input matInput [(ngModel)]="search" (input)="filter()">
+    </mat-form-field>
+</div>
+
+<div class="grid">
+    <mat-card class="card" *ngFor="let post of filtered">
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-subtitle>{{post.location}}</mat-card-subtitle>
+
+        <mat-card-content>
+            <p>₹ {{post.price}} / month</p>
+            <p>{{post.furnished ? 'Furnished' : 'Unfurnished'}}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [routerLink]="['/details', post.id]">
+                View Details
+            </button>
+            <button (click)="toggleFavourite(post.id)">❤️</button>
+        </mat-card-actions>
+    </mat-card>
 </div>

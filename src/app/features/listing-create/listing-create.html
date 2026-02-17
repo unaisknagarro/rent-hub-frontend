@@ -1,22 +1,38 @@
-<!-- <form [formGroup]="postForm" (ngSubmit)="submit()"></form> -->
-<form (ngSubmit)="submit()">
-    <input formControlName="title" placeholder="Title" />
-    <textarea formControlName="description"></textarea>
-    <input formControlName="location" placeholder="Location" />
-    <input type="number" formControlName="price" />
+<mat-card class="form-card">
+  <mat-card-title>Create New Listing</mat-card-title>
 
+  <form [formGroup]="form">
 
-    <label>Furnished:</label>
-    <input type="radio" value="yes" formControlName="furnished" /> Yes
-    <input type="radio" value="no" formControlName="furnished" /> No
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Location</mat-label>
+      <input matInput formControlName="location">
+    </mat-form-field>
 
-    <div formGroupName="amenities">
-        <label><input type="checkbox" formControlName="wifi" /> WiFi</label>
-        <label><input type="checkbox" formControlName="parking" /> Parking</label>
-        <label><input type="checkbox" formControlName="ac" /> AC</label>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" formControlName="price">
+    </mat-form-field>
 
+    <mat-checkbox formControlName="furnished">Furnished</mat-checkbox>
 
-    <button type="submit">Create Post</button>
-</form>
+    <mat-radio-group formControlName="vegOnly">
+      <mat-radio-button [value]="true">Veg Only</mat-radio-button>
+      <mat-radio-button [value]="false">Any</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="4" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="preview()">
+      Preview
+    </button>
+
+  </form>
+</mat-card>

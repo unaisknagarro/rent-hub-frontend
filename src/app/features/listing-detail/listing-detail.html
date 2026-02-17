@@ -1,16 +1,22 @@
-<h2>{{apartment?.title}}</h2>
-<p>{{apartment?.description}}</p>
+<mat-card *ngIf="post" class="details">
+    <h2>{{post.title}}</h2>
+    <p><b>Location:</b> {{post.location}}</p>
+    <p><b>Price:</b> ₹ {{post.price}}</p>
+    <p><b>Description:</b> {{post.description}}</p>
 
+    <h3>Comments</h3>
 
-<h3>Comments</h3>
-@for(c of apartment?.comments; track c._id)
-{
-<div>
-    <p>{{c.text}}</p>
-</div>
-}
+    <div *ngFor="let c of comments" class="comment">
+        {{c.text}}
+    </div>
 
+    <mat-form-field appearance="outline">
+        <mat-label>Add Comment</mat-label>
+        <input matInput [(ngModel)]="text">
+    </mat-form-field>
 
+    <button mat-raised-button color="accent" (click)="addComment()">
+        Post
+    </button>
 
-<textarea [(ngModel)]="commentText"></textarea>
-<button (click)="addComment()">Comment</button>
+</mat-card>
