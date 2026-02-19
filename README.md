@@ -108,7 +108,6 @@ Step 3️⃣ Run Application
 
 npm start
 
-
 Step 4️⃣ Open in Browser
 
 http://localhost:4200
