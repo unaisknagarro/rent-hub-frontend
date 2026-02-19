@@ -79,63 +79,63 @@ src/
 ├── app/
 
 
-│ ├── core/
+  ├── core/
 
-│ │ ├── guards/
+    ├── guards/
 
-│ │ │ ├── auth.guard.ts
+      ├── auth.guard.ts
 
-│ │ ├── interceptors/
+    ├── interceptors/
 
-│ │ │ ├── auth.ts
+      ├── auth.ts
 
-│ │ ├── services/
+    ├── services/
 
-│ │ │ ├── auth.service.ts
+      ├── auth.service.ts
 
-│ │ │ ├── auth.spec.ts
+      ├── auth.spec.ts
 
-│ │ │ ├── comment.ts
+      ├── comment.ts
 
-│ │ │ ├── listing.ts
+      ├── listing.ts
 
-│ │ │ ├── seed.service.ts
+      ├── seed.service.ts
 
-│ ├── features/
+  ├── features/
 
-│ │ ├── home/
+    ├── home/
 
-│ │ ├── auth/
+    ├── auth/
 
-│ │ ├── listing-create/
+    ├── listing-create/
 
-│ │ ├── listing-detail/
+    ├── listing-detail/
 
-│ │ └── preview/
+    ├── preview/
 
-│ ├── shared/
+  ├── shared/
 
-│ │ ├── components
+    ├── components
 
-│ │ │ ├── navbar/
+      ├── navbar/
 
-│ │ ├── models
+    ├── models
 
-│ │ │ ├── comment.ts
+      ├── comment.ts
 
-│ │ │ ├── user.ts
+      ├── user.ts
 
-│ ├── app.config.ts
+  ├── app.config.ts
 
-│ ├── app.css
+  ├── app.css
 
-│ ├── app.html
+  ├── app.html
 
-│ ├── app.routes.ts
+  ├── app.routes.ts
 
-│ ├── app.spec.ts
+  ├── app.spec.ts
 
-│ ├── app.ts
+  ├── app.ts
 
 └── index.html
 
