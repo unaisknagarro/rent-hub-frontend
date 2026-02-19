@@ -75,43 +75,73 @@ Password: unaisk1234
 ## 📂 Project Structure
 
 src/
+
 ├── app/
+
+
 │ ├── core/
+
 │ │ ├── guards/
+
 │ │ │ ├── auth.guard.ts
+
 │ │ ├── interceptors/
+
 │ │ │ ├── auth.ts
+
 │ │ ├── services/
+
 │ │ │ ├── auth.service.ts
+
 │ │ │ ├── auth.spec.ts
+
 │ │ │ ├── comment.ts
+
 │ │ │ ├── listing.ts
+
 │ │ │ ├── seed.service.ts
+
 │ ├── features/
+
 │ │ ├── home/
+
 │ │ ├── auth/
+
 │ │ ├── listing-create/
+
 │ │ ├── listing-detail/
+
 │ │ └── preview/
+
 │ ├── shared/
+
 │ │ ├── components
+
 │ │ │ ├── navbar/
+
 │ │ ├── models
+
 │ │ │ ├── comment.ts
+
 │ │ │ ├── user.ts
+
 │ ├── app.config.ts
+
 │ ├── app.css
+
 │ ├── app.html
+
 │ ├── app.routes.ts
+
 │ ├── app.spec.ts
+
 │ ├── app.ts
+
 └── index.html
+
 └── main.ts
+
 └── material-theme.scss
-
-The repository folder structure is visualized below. Click or view the SVG to see a scalable diagram of the project layout.
-
-![Folder structure](docs/folder-structure.svg)
 
 ---
 
