@@ -89,6 +89,9 @@ src/
 │ └── app.component.ts
 └── main.ts
 
+The repository folder structure is visualized below. Click or view the SVG to see a scalable diagram of the project layout.
+
+![Folder structure](docs/folder-structure.svg)
 
 ---
 
