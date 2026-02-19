@@ -76,18 +76,38 @@ Password: unaisk1234
 
 src/
 ├── app/
-│ ├── pages/
+│ ├── core/
+│ │ ├── guards/
+│ │ │ ├── auth.guard.ts
+│ │ ├── interceptors/
+│ │ │ ├── auth.ts
+│ │ ├── services/
+│ │ │ ├── auth.service.ts
+│ │ │ ├── auth.spec.ts
+│ │ │ ├── comment.ts
+│ │ │ ├── listing.ts
+│ │ │ ├── seed.service.ts
+│ ├── features/
 │ │ ├── home/
-│ │ ├── preview/
-│ │ ├── create-listing/
-│ │ ├── login/
-│ │ └── signup/
-│ ├── services/
-│ │ ├── auth.service.ts
-│ │ └── listing.service.ts
+│ │ ├── auth/
+│ │ ├── listing-create/
+│ │ ├── listing-detail/
+│ │ └── preview/
+│ ├── shared/
+│ │ ├── components
+│ │ │ ├── navbar/
+│ │ ├── models
+│ │ │ ├── comment.ts
+│ │ │ ├── user.ts
+│ ├── app.config.ts
+│ ├── app.css
+│ ├── app.html
 │ ├── app.routes.ts
-│ └── app.component.ts
+│ ├── app.spec.ts
+│ ├── app.ts
+└── index.html
 └── main.ts
+└── material-theme.scss
 
 The repository folder structure is visualized below. Click or view the SVG to see a scalable diagram of the project layout.
 
