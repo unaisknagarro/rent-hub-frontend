@@ -1,4 +1,4 @@
-# 🏠 Angular Property Listing App
+# 🏠 RentHub (Property Listing App created in Angular)
 
 A modern **Angular-based property listing platform** that allows users to browse listings, view details, add comments, mark favourites, and manage listings after login.
 
@@ -9,14 +9,14 @@ This project demonstrates **Angular routing, state management using localStorage
 ## 🚀 Live Demo
 
 🔗 **Application URL:**  
-https://<your-deployment-url>
+https://basic-assignment-rent-hub-frontend.vercel.app
 
 
 
 ## 🔑 Demo Credentials
 
-Email: demo@user.com
-Password: demo123
+Email: unaisk@xyz.com
+Password: unaisk1234
 
 
 > You may create your own account using the **Signup page**.
@@ -64,7 +64,7 @@ Password: demo123
 
 ## 🛠 Tech Stack
 
-- **Frontend Framework:** Angular (Standalone Components)
+- **Frontend Framework:** Angular 20 (Standalone Components)
 - **Language:** TypeScript
 - **Styling:** CSS3
 - **Routing:** Angular Router
@@ -89,6 +89,9 @@ src/
 │ └── app.component.ts
 └── main.ts
 
+The repository folder structure is visualized below. Click or view the SVG to see a scalable diagram of the project layout.
+
+![Folder structure](docs/folder-structure.svg)
 
 ---
 
@@ -97,8 +100,8 @@ src/
 ### Step 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/unaisknagarro/rent-hub-frontend.git
+cd rent-hub-frontend
 
 Step 2️⃣ Install Dependencies
 
@@ -106,8 +109,7 @@ npm install
 
 Step 3️⃣ Run Application
 
-ng serve
-
+npm start
 
 Step 4️⃣ Open in Browser
 
@@ -121,9 +123,8 @@ Signup → Login → Session stored → Access features
 
 👨‍💻 Author
 
-Name: <Your Name>
-GitHub: https://github.com/
-<your-username>
+Name: Unais Kamle
+GitHub: https://github.com/unaisknagarro
 
 📜 License
 
